@@ -1,4 +1,6 @@
 using eAccounting.Data;
+using eAccounting.Repositories;
+using eAccounting.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -41,6 +43,18 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddAuthorization();
+
+
+
+// Register Dependency Injection
+builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
+
+builder.Services.AddScoped<IFinancialYearRepository, FinancialYearRepository>();
+builder.Services.AddScoped<IFinancialYearService, FinancialYearService>();
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -4,7 +4,6 @@ namespace eAccounting.Models
 {
     public class User
     {
-
         public int Id { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Full name must be between 3 and 50 characters")]
@@ -21,7 +20,7 @@ namespace eAccounting.Models
 
         public string Role { get; set; } = "User";
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime LastUpdatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime LastUpdatedAt { get; set; }
         public bool IsActive { get; set; } = true;
 
 

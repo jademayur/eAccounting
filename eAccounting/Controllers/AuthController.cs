@@ -13,12 +13,12 @@ namespace eAccounting.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountController : ControllerBase
+    public class AuthController : ControllerBase
     {
         private readonly AppDbContext context;
         private readonly IConfiguration configuration;
 
-        public AccountController(AppDbContext context, IConfiguration configuration)
+        public AuthController(AppDbContext context, IConfiguration configuration)
         {
             this.context = context;
             this.configuration = configuration;
